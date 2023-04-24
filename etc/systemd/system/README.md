@@ -1,3 +1,13 @@
+**changemac.service**
+
+To use changemac.service
+
+copy changemac.service to /etc/systemd/system/
+
+then go to the console and type systemctl enable changemac.service
+
+Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
+
 **qdisc.service**
 
 To use qdisc.service
@@ -9,16 +19,6 @@ then go to the console and type systemctl enable qdisc.service
 Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
 for cake, you can use flowblind if you only have one network connection, flows if you have multiple network connections opened simultaneously.
-
-**changemac.service**
-
-To use changemac.service
-
-copy changemac.service to /etc/systemd/system/
-
-then go to the console and type systemctl enable changemac.service
-
-Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
 **settxpower.service**
 
