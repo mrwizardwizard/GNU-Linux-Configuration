@@ -1,0 +1,25 @@
+#!/sbin/openrc-run
+# staticnet-inbound and staticnet-outbound is to be used with nat masqueradeing (use nftables ip nat chain postrouting).
+# staticnet-outbound(interface1)>staticnet-inbound(interface2)>iif masquerade(interface2)>dhcp client(interface3).
+
+description="StaticNET-Outbound OpenRC Service"
+
+INTERFACE=setinterfacehere
+SOURCEIP=setsourceiphere
+DESTINATIONIP=setdestinationiphere
+
+start() {
+setupinterface
+}
+
+setupinterface() {
+# Bring interface up and set interface parameters
+ip link set ${INTERFACE} up multicast off
+
+# Set interface IP
+ip address add ${SOURCEIP}/0 dev ${INTERFACE} noprefixroute
+
+# Set interface and destination IP
+ip route add default dev ${INTERFACE}
+ip route replace default via ${DESTINATIONIP}
+}
