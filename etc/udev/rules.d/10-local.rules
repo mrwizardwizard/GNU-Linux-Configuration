@@ -1,1 +1,66 @@
+# Backlight Control
+#ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", ATTR{brightness}="1"
 
+# Battery Control
+#ACTION=="change", SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="/sbin/poweroff"
+
+# Power Save On All Devices
+ACTION=="add", SUBSYSTEM=="*", ATTR{power/autosuspend}="0"
+ACTION=="add", SUBSYSTEM=="*", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="usb", ATTR{power/control}="on"
+
+# Turn off LEDs
+ACTION=="add", SUBSYSTEM=="leds", ATTR{brightness}="0"
+ACTION=="add", SUBSYSTEM=="leds", ATTR{trigger}="none"
+
+# USB Autosuspend Whitelist
+#ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="xxxx", ATTR{idProduct}=="xxxx", ATTR{power/control}="on"
+
+# USB Authorized Whitelist
+#ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="xxxx", ATTR{idProduct}=="xxxx", ATTR{authorized}="1"
+
+# CPU Scheduler
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 3000000 > /sys/kernel/debug/sched/latency_ns'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 10000000 > /sys/kernel/debug/sched/idle_min_granularity_ns'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 25000000 > /sys/kernel/debug/sched/migration_cost_ns'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 10000000 > /sys/kernel/debug/sched/min_granularity_ns'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 250 > /sys/kernel/debug/sched/nr_migrate'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo full > /sys/kernel/debug/sched/preempt'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 0 > /sys/kernel/debug/sched/tunable_scaling'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 100000 > /sys/kernel/debug/sched/wakeup_granularity_ns'"
+
+# I/O Scheduler
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{removable}=="0", ATTR{queue/scheduler}="bfq"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{removable}=="1", ATTR{queue/scheduler}="none"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="nvme*|mmcblk*", ATTR{queue/scheduler}="none"
+# BFQ
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{queue/iosched/fifo_expire_async}="100"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{queue/iosched/fifo_expire_sync}="100"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{queue/iosched/timeout_sync}="100"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*", ATTR{queue/iosched/slice_idle_us}="20000"
+# None
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/io_timeout}="100000"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/iostats}="0"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/nr_requests}="10"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/throttle_sample_time}="20"
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/wbt_lat_usec}="20000"
+
+# Network Scheduler
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{mtu}="65536"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{tx_queue_len}="250"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{mtu}="1500"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{tx_queue_len}="250"
+
+# CPU Governor
+ACTION=="add", SUBSYSTEM=="cpu", KERNEL=="cpu*", ATTR{cpufreq/scaling_governor}="schedutil"
+ACTION=="add", RUN+="/bin/sh -c 'echo 250000 > /sys/devices/system/cpu/cpufreq/schedutil/rate_limit_us'"
+
+# RTC Timer Frequency
+ACTION=="add", SUBSYSTEM=="rtc", KERNEL=="rtc0", ATTR{max_user_freq}="1"
+
+# Memory Management
+ACTION=="add", SUBSYSTEM=="mem", RUN+="/bin/sh -c 'echo 10000 > /sys/kernel/mm/transparent_hugepage/khugepaged/alloc_sleep_millisecs'"
+ACTION=="add", SUBSYSTEM=="mem", RUN+="/bin/sh -c 'echo 100000 > /sys/kernel/mm/transparent_hugepage/khugepaged/scan_sleep_millisecs'"
+ACTION=="add", SUBSYSTEM=="mem", RUN+="/bin/sh -c 'echo always > /sys/kernel/mm/transparent_hugepage/defrag'"
+ACTION=="add", SUBSYSTEM=="mem", RUN+="/bin/sh -c 'echo always > /sys/kernel/mm/transparent_hugepage/enabled'"
+ACTION=="add", SUBSYSTEM=="mem", RUN+="/bin/sh -c 'echo always > /sys/kernel/mm/transparent_hugepage/shmem_enabled'"
