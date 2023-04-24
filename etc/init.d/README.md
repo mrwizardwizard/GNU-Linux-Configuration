@@ -1,3 +1,15 @@
+**changemac**
+
+To use changemac (OpenRC service)
+
+copy changemac to /etc/init.d/
+
+set an executable bit on changemac (chmod +x changemac)
+
+then go to the console and type rc-update add changemac boot
+
+Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
+
 **qdisc**
 
 To use qdisc (OpenRC service)
@@ -11,18 +23,6 @@ then go to the console and type rc-update add qdisc default
 Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
 for cake, you can use flowblind if you only have one network connection, flows if you have multiple network connections opened simultaneously.
-
-**changemac**
-
-To use changemac (OpenRC service)
-
-copy changemac to /etc/init.d/
-
-set an executable bit on changemac (chmod +x changemac)
-
-then go to the console and type rc-update add changemac boot
-
-Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
 **settxpower**
 
