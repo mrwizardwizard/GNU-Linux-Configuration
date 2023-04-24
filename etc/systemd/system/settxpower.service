@@ -1,0 +1,9 @@
+[Unit]
+Description=Set TX power Systemd Service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/iw $INTERFACE set txpower fixed 500
+
+[Install]
+WantedBy=multi-user.target
