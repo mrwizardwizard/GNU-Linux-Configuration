@@ -18,6 +18,10 @@ Set hidepid=invisible for extra security (note that this can cause some software
 
 Here you can put your favourite IPs to do domain name lookups locally (or build your own local DNS server), you need to use a DNS client first to lookup domains or use the routers DNS server and then add the IPs and domain names to the hosts file.
 
+**limits**
+
+Change user to your username.
+
 **locale.gen**
 
 This file defines C/POSIX as the default locale with codeset ASCII, this only supports 127 characters and only supports latin characters, but it is useful to speed up console commands (grep, etc).
@@ -35,10 +39,6 @@ Fill in arp saddr ether xx:xx:xx:xx:xx:xx with your modem or routers ethernet MA
 Fill in arp saddr ip with your modem or routers gateway ip address.
 
 Check the nftables wiki link on the main page for more information.
-
-**limits**
-
-Change user to your username.
 
 **resolv.conf**
 
