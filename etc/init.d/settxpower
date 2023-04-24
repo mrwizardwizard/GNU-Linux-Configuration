@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+description="Set TX power OpenRC Service"
+
+command="/usr/sbin/iw"
+command_args="$INTERFACE set txpower fixed 500"
