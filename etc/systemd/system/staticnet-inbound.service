@@ -1,0 +1,20 @@
+# staticnet-inbound and staticnet-outbound is to be used with nat masqueradeing (use nftables ip nat chain postrouting).
+# staticnet-outbound(interface1)>staticnet-inbound(interface2)>iif masquerade(interface2)>dhcp client(interface3).
+
+[Unit]
+Description=StaticNET-Inbound Systemd Service
+
+[Service]
+Type=oneshot
+
+# Bring interface up and set interface parameters
+ExecStart=/usr/bin/ip link set $INTERFACE up multicast off
+
+# Set interface IP
+ExecStart=/usr/bin/ip address add $SOURCEIP/0 dev $INTERFACE scope host noprefixroute
+
+# Set interface and source IP
+ExecStart=/usr/bin/ip route add $SOURCEIP/8 dev $INTERFACE scope host src $SOURCEIP
+
+[Install]
+WantedBy=multi-user.target
