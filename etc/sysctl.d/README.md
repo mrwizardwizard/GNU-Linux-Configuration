@@ -26,6 +26,10 @@ net.ipv4.tcp_congestion_control can be set to illinois (lower latency) or westwo
 
 net.core.default_qdisc can be set to cake if you have multiple network connections opened simultaneously.
 
+**Netfilter Options:**
+
+net.netfilter.nf_conntrack_tcp_timeout_established is set to 5 minutes by default(300), for better security, you can tune this lower to 10 seconds, after 10 seconds of inactivity, the established connection times out.
+
 **Tips:**
 
 The sync; command is a useful command to write out all cached data to disk (after writeing files, etc).
