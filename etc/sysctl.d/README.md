@@ -28,7 +28,7 @@ net.core.default_qdisc can be set to cake if you have multiple network connectio
 
 **Netfilter Options:**
 
-net.netfilter.nf_conntrack_tcp_timeout_established is set to 5 minutes by default(300), for better security, you can tune this lower to 10 seconds, after 10 seconds of inactivity, the established connection times out.
+net.netfilter.nf_conntrack_tcp_timeout_established is set to 1 minutes by default (60), for better security, you can tune this lower to 10 seconds, after 10 seconds of inactivity, the established connection times out.
 
 **Tips:**
 
