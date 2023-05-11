@@ -1,5 +1,6 @@
 [Unit]
 Description=Set TX power Systemd Service
+After=network-pre.target
 
 [Service]
 Type=oneshot
