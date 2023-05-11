@@ -1,6 +1,6 @@
 [Unit]
 Description=Change MAC Systemd Service
-Before=network.target
+After=network-pre.target
 
 [Service]
 Type=oneshot
