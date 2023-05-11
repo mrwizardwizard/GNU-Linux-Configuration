@@ -1,5 +1,6 @@
 [Unit]
 Description=Qdisc Systemd Service
+After=network-pre.target
 
 [Service]
 Type=oneshot
