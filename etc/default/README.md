@@ -22,3 +22,5 @@ mds=full , mitigations=auto , mmio_stale_data=full , retbleed=auto , tsx_async_a
 Disabling microcode updates with dis_ucode_ldr, disables microcode stability and CPU bug fixes but also disables security fixes (better performance) and maybe at the cost of stability.
 
 To enable minstrel for wireless (tx rate control algorithm), Set mac80211.ieee80211_default_rc_algo=minstrel_ht
+
+Add skew_tick=1 to grubs CMDLINE options for jitter sensitive workloads (better latency) (CONFIG_MAXSMP must be enabled in the kernel config).
