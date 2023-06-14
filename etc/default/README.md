@@ -25,4 +25,4 @@ To enable minstrel for wireless (tx rate control algorithm), Set mac80211.ieee80
 
 Add skew_tick=1 to grubs CMDLINE options for jitter sensitive workloads (better latency) (CONFIG_MAXSMP must be enabled in the kernel config).
 
-Tune rcutree.rcu_fanout_leaf between 2-64 to the amount of CPUs you have (2 for 2 cores, etc)
+Tune rcutree.rcu_fanout_leaf between 2-64 to the amount of CPUs you have (2 for 2 cores, etc).
