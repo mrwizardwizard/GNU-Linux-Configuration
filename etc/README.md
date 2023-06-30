@@ -20,7 +20,7 @@ Here you can put your favourite IPs to do domain name lookups locally (or build 
 
 **limits**
 
-Change user to your username.
+limits is for user resource limits (useful to prevent bottlenecking other processes).
 
 **locale.gen**
 
