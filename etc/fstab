@@ -1,14 +1,28 @@
+# /etc/fstab: static file system information.
+#
+# The root filesystem should have a pass number of either 0 or 1.
+# All other filesystems should have a pass number of 0 or greater than 1.
+#
 # See the manpage fstab(5) for more information.
-# device-spec   mount-point     fs-type      options dump pass
-UUID=set-uuid-here	/	btrfs	rw,async,auto,nouser,dev,exec,suid,noatime,autodefrag,space_cache=v2,nodatacow,commit=5 0 0
-UUID=set-uuid-here /home	btrfs	rw,async,auto,nouser,exec,noatime,nosuid,nodev,autodefrag,space_cache=v2,nodatacow,commit=5 0 0
+#
 
+# <fs>			<mountpoint>	<type>		<opts>		<dump/pass>
+
+# (/) root filesystem
+UUID=set-uuid-here	/	btrfs	rw,async,auto,nouser,dev,exec,suid,noatime,autodefrag,space_cache=v2,nodatacow,commit=5 0 0
+
+# Mountpoints
+dev /dev devtmpfs rw,async,auto,noatime,nosuid,noexec,nouser 0 0
+devpts /dev/pts devpts rw,async,auto,noatime,nosuid,noexec,nouser,gid=5 0 0
+shm /dev/shm tmpfs rw,async,auto,noatime,huge=always,nodev,nosuid,noexec,nouser 0 0
 proc /proc proc rw,async,auto,noatime,hidepid=0,nodev,nosuid,noexec,nouser 0 0
 sysfs /sys sysfs rw,async,auto,noatime,nodev,nosuid,noexec,nouser 0 0
-dev /dev devtmpfs rw,async,auto,noatime,nosuid,noexec,nouser 0 0
-tmpfs /run tmpfs rw,async,auto,noatime,huge=always,nodev,nosuid,noexec,nouser 0 0
-shm /dev/shm tmpfs rw,async,auto,noatime,huge=always,nodev,nosuid,noexec,nouser 0 0
-devpts /dev/pts devpts rw,async,auto,noatime,nosuid,noexec,nouser,gid=5 0 0
 configfs /sys/kernel/config configfs rw,async,auto,noatime,nodev,nosuid,noexec,nouser 0 0
+tmpfs /run tmpfs rw,async,auto,noatime,huge=always,nodev,nosuid,noexec,nouser 0 0
 tmpfs /tmp tmpfs rw,async,auto,noatime,huge=always,nodev,nosuid,noexec,nouser 0 0
 #tmpfs /var/tmp/portage tmpfs size=95%,rw,async,noauto,noatime,huge=always,nodev,nosuid,nouser 0 0
+
+# /home filesystem
+UUID=set-uuid-here /home	btrfs	rw,async,auto,nouser,exec,noatime,nosuid,nodev,autodefrag,space_cache=v2,nodatacow,commit=5 0 0
+
+# External filesystems
