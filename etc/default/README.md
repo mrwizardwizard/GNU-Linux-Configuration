@@ -14,8 +14,6 @@ usbcore.authorized_default=0 can be used for systems (laptops, etc) that do not 
 
 You can use lockdown=confidentiality and debugfs=off for extra security, if you do not plan to tune CFS tunables or if you change the fair.c/core.c/rt.c tunables.
 
-Set schedstats to schedstats=disable if you do not plan to tune CFS tunables or if you change the fair.c/core.c/rt.c tunables.
-
 You can change usbhid.mousepoll, usbhid.jspoll, usbhid.kbpoll based on millisecond values (10 = 100Hz, 8 = 125Hz, 5 = 200Hz, 4 = 250Hz, 2 = 500Hz, 1 = 1000Hz or 0 which uses your mouse, keyboard, joystick default polling rate).
 
 To enable all cores with CPU mitigations, you can set
