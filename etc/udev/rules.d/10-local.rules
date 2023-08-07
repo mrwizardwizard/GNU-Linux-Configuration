@@ -47,13 +47,15 @@ ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd*|nvme*|mmcblk*", ATTR{queue/wbt_l
 
 # Network Scheduler
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{mtu}="65536"
-ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{tx_queue_len}="250"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{tx_queue_len}="10000"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="lo", ATTR{threaded}="0"
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{mtu}="1500"
 ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{tx_queue_len}="250"
+ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{threaded}="0"
 
 # CPU Governor
 ACTION=="add", SUBSYSTEM=="cpu", KERNEL=="cpu*", ATTR{cpufreq/scaling_governor}="schedutil"
-ACTION=="add", RUN+="/bin/sh -c 'echo 250000 > /sys/devices/system/cpu/cpufreq/schedutil/rate_limit_us'"
+ACTION=="add", SUBSYSTEM=="cpu", KERNEL=="cpu*", ATTR{cpufreq/schedutil/rate_limit_us}="250000"
 
 # RTC Timer Frequency
 ACTION=="add", SUBSYSTEM=="rtc", KERNEL=="rtc0", ATTR{max_user_freq}="1"
