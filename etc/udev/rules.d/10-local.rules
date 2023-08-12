@@ -56,6 +56,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*|et*", ATTR{threaded}="0"
 # CPU Governor
 ACTION=="add", SUBSYSTEM=="cpu", KERNEL=="cpu*", ATTR{cpufreq/scaling_governor}="schedutil"
 ACTION=="add", SUBSYSTEM=="cpu", KERNEL=="cpu*", ATTR{cpufreq/schedutil/rate_limit_us}="250000"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 250000 > /sys/devices/system/cpu/cpufreq/schedutil/rate_limit_us'"
 
 # RTC Timer Frequency
 ACTION=="add", SUBSYSTEM=="rtc", KERNEL=="rtc0", ATTR{max_user_freq}="1"
