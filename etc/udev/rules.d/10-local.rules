@@ -24,6 +24,7 @@ ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 3000000 > /sys/kernel/de
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 10000000 > /sys/kernel/debug/sched/idle_min_granularity_ns'"
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 25000000 > /sys/kernel/debug/sched/migration_cost_ns'"
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 10000000 > /sys/kernel/debug/sched/min_granularity_ns'"
+ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 3000000 > /sys/kernel/debug/sched/base_slice_ns'"
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 250 > /sys/kernel/debug/sched/nr_migrate'"
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo full > /sys/kernel/debug/sched/preempt'"
 ACTION=="add", SUBSYSTEM=="cpu", RUN+="/bin/sh -c 'echo 0 > /sys/kernel/debug/sched/tunable_scaling'"
