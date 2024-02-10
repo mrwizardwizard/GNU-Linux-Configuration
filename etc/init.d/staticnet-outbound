@@ -17,7 +17,7 @@ setupinterface() {
 ip link set ${INTERFACE} up multicast off
 
 # Set interface IP
-ip address add ${SOURCEIP}/0 dev ${INTERFACE} noprefixroute
+ip address add ${SOURCEIP}/31 dev ${INTERFACE} noprefixroute
 
 # Set interface and destination IP
 ip route add default dev ${INTERFACE}
