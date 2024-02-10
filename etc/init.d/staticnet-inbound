@@ -16,8 +16,8 @@ setupinterface() {
 ip link set ${INTERFACE} up multicast off
 
 # Set interface IP
-ip address add ${SOURCEIP}/0 dev ${INTERFACE} scope host noprefixroute
+ip address add ${SOURCEIP}/31 dev ${INTERFACE} scope host noprefixroute
 
 # Set interface and source IP
-ip route add ${SOURCEIP}/8 dev ${INTERFACE} scope host src ${SOURCEIP}
+ip route add ${SOURCEIP}/31 dev ${INTERFACE} scope host src ${SOURCEIP}
 }
