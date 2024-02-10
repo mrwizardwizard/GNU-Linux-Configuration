@@ -11,7 +11,7 @@ Type=oneshot
 ExecStart=/usr/bin/ip link set $INTERFACE up multicast off
 
 # Set interface IP
-ExecStart=/usr/bin/ip address add $SOURCEIP/0 dev $INTERFACE noprefixroute
+ExecStart=/usr/bin/ip address add $SOURCEIP/31 dev $INTERFACE noprefixroute
 
 # Set interface and destination IP
 ExecStart=/usr/bin/ip route add default dev $INTERFACE
