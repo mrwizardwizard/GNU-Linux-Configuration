@@ -28,7 +28,7 @@ This file defines C/POSIX as the default locale with codeset ASCII, this only su
 
 **nftables.conf**
 
-This is a basic ingress stateful firewall configuration (IPV4 only).
+This is a basic ingress stateful firewall configuration.
 
 It only accepts packets from port 53 (DNS) and 443 (HTTPS) on inbound.
 
@@ -37,6 +37,8 @@ To use ingress, change NETDEVICE to the network interface name in ifconfig (wlan
 Fill in arp saddr ether xx:xx:xx:xx:xx:xx with your modem or routers ethernet MAC address (if you cannot figure out which MAC addresses to add, use wireshark to figure out how your computer is communicateing with the modem/router).
 
 Fill in arp saddr ip with your modem or routers gateway ip address.
+
+You can change tables to support either ip(ipv4 only), ip6(ipv6 only) or inet(ipv4/ipv6).
 
 Check the nftables wiki link on the main page for more information.
 
