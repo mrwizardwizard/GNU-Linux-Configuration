@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 LC_ALL=POSIX
 LANG=POSIX
 HISTSIZE=0
