@@ -1,3 +1,6 @@
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 # Distributed under the terms of the GNU General Public License v2
 # After modifying, run grub-mkconfig -o /boot/grub/grub.cfg
 # Location:/Documentation/admin-guide/kernel-parameters.txt
