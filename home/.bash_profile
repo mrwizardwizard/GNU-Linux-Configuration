@@ -1,3 +1,6 @@
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 #
 # ~/.bash_profile
 #
