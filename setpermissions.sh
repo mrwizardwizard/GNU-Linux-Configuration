@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 # Set file owner
 chown root:root /etc/X11/xorg.conf.d/10-xorg.conf
 chown root:root /etc/default/grub
