@@ -1,5 +1,8 @@
 #!/sbin/openrc-run
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 description="Change MAC OpenRC Service"
 command="/bin/ip"
 command_args="link set dev wlan0 address xx:xx:xx:xx:xx:xx"
