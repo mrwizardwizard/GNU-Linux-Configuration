@@ -1,5 +1,8 @@
 #!/sbin/openrc-run
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 description="Set TX power OpenRC Service"
 
 command="/usr/sbin/iw"
