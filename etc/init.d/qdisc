@@ -1,5 +1,8 @@
 #!/sbin/openrc-run
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 description="Qdisc OpenRC Service"
 command="/sbin/tc"
 
