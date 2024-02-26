@@ -1,3 +1,6 @@
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 # staticnet-inbound and staticnet-outbound is to be used with nat masqueradeing (use nftables ip nat chain postrouting).
 # staticnet-outbound(interface1)>staticnet-inbound(interface2)>iif masquerade(interface2)>dhcp client(interface3).
 
