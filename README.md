@@ -8,7 +8,7 @@ Linux-Kernel-Configuration: https://github.com/mrwizardwizard/Linux-Kernel-Confi
 
 This linux setup is based on ideas of obtaining more performance (more free CPU resources, etc) by disabling options (and enabling ones that are not enabled by default for certain purposes (low memory conditions, works out of the box, etc) ), configuring it in a way that it performs better and tuning options to balance and obtain stability between low latency/throughput.
 
-Security is first before performance since it is important.
+Security is enabled by default, read the README.MD files to switch to performance settings.
 
 **Tips:**
 
