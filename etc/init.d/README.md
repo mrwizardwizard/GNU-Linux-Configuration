@@ -22,7 +22,7 @@ then go to the console and type rc-update add qdisc default
 
 Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
-for cake, you can use flowblind if you only have one network connection, flows if you have multiple network connections opened simultaneously.
+for cake, you can use flowblind if you only have one network connection, triple-isolate if you have multiple network connections opened simultaneously.
 
 **settxpower**
 
