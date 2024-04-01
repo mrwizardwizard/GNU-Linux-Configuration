@@ -18,7 +18,7 @@ then go to the console and type systemctl enable qdisc.service
 
 Don't forget to set the device name "dev wlan0" (use ifconfig or ip address to find out).
 
-for cake, you can use flowblind if you only have one network connection, triple-isolate if you have multiple network connections opened simultaneously.
+for cake, you can use flowblind if you only have one network connection, if you have multiple network connections opened simultaneously, use dual-srchost for egress, dual-dsthost for ingress or triple-isolate for both ingress and egress (router traffic).
 
 **settxpower.service**
 
