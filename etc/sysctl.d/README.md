@@ -24,6 +24,8 @@ net.ipv4.tcp_timestamps can be set to 1 for extra security against remote attack
 
 net.ipv4.tcp_congestion_control can be set to illinois (lower latency) or westwood (better throughput) for end to end tcp QoS (needed if many devices are connected to your network and to avoid bufferbloat/congestion), scalable if nobody is on your network.
 
+net.ipv4.tcp_syncookies can be set to 0 if you already block SYN on inbound (firewall).
+
 net.core.default_qdisc can be set to cake if you have multiple network connections opened simultaneously.
 
 **Netfilter Options:**
