@@ -28,3 +28,5 @@ Add skew_tick=1 to grubs CMDLINE options for jitter sensitive workloads (better 
 rodata can be set to rodata=full on arm64 for extra security.
 
 Tune rcutree.rcu_fanout_leaf between 2-64 to the amount of CPUs you have (2 for 2 cores, etc).
+
+hash_pointers set to always stops console input on older kernels than 6.17
