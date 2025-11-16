@@ -16,6 +16,10 @@ Sysctl option kernel.modules_disabled = 1 is commented, if you don't use modules
 
 kernel.randomize_va_space , kernel.stack_erasing and kernel.split_lock_mitigate can be set to 0 for better performance at the cost of less security.
 
+**VM Options:**
+
+vm.mmap_rnd_bits max value can be set to 33 on arch64.
+
 **Networking Options:**
 
 net.core.netdev_tstamp_prequeue should be set to 0 if you have more than 2 CPU cores, set to 1 if you have less than 2 CPU cores.
