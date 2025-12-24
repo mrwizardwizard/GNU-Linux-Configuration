@@ -24,7 +24,7 @@ limits is for user resource limits (useful to prevent bottlenecking other proces
 
 **locale.gen**
 
-This file defines C/POSIX as the default locale with codeset ASCII, this only supports 127 characters and only supports latin characters, but it is useful to speed up console commands (grep, etc).
+This file defines C.UTF-8 and ISO-8859-1 as the default locales, using a minimal codeset is useful to speed up console commands (grep, etc).
 
 **nftables.conf**
 
