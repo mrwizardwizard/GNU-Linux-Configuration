@@ -14,6 +14,8 @@ Some options are btrfs specific (autodefrag,space_cache=v2,nodatacow) you can de
 
 Set hidepid=invisible for extra security (note that this can cause some software to not function properly because it hides process IDs from the user).
 
+Use sync for memory filesystems/storage devices and async for mechanical/sd cards (slower storage devices).
+
 **hosts**
 
 Here you can put your favourite IPs to do domain name lookups locally (or build your own local DNS server), you need to use a DNS client first to lookup domains or use the routers DNS server and then add the IPs and domain names to the hosts file.
