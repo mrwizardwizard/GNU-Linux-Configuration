@@ -14,7 +14,7 @@ Some options are btrfs specific (autodefrag,space_cache=v2,nodatacow) you can de
 
 Set hidepid=invisible for extra security (note that this can cause some software to not function properly because it hides process IDs from the user).
 
-Use sync for memory filesystems/storage devices and async for mechanical/sd cards (slower storage devices).
+Use sync for memory filesystems/storage devices (faster storage devices) and async for mechanical/sd cards (slower storage devices).
 
 **hosts**
 
