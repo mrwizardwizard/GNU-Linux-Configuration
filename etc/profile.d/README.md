@@ -24,3 +24,5 @@ TCP_CORK=0 disables TCP socket corking, which also affects latency.
 TCP_QUICKACK=1 enables quickacks, which is better for latency.
 
 Set TCP_NODELAY=0, TCP_CORK=1, TCP_QUICKACK=0 for throughput optimization at the cost of latency.
+
+Remove variable LD_PRELOAD=libc_malloc_debug.so.0 and export LD_PRELOAD if you do not want to use glibc tunable glibc.malloc.check and also set glibc.malloc.check to 0
