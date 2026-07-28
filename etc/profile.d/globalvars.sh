@@ -27,7 +27,7 @@ _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dsun.java2d
 TCP_NODELAY=1
 TCP_QUICKACK=1
 TCP_CORK=0
-LD_PRELOAD=libc_malloc_debug.so.0
+LD_PRELOAD=/lib64/libc_malloc_debug.so.0
 HZ=320
 GLIBC_TUNABLES=glibc.malloc.check=3:glibc.malloc.hugetlb=2:glibc.pthread.stack_hugetlb=1:glibc.rtld.execstack=0
 
